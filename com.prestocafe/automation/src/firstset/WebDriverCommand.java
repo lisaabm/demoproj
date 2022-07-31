@@ -1,0 +1,36 @@
+package firstset;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WebDriverCommand {
+	public static void main(String[] args) throws InterruptedException 
+	{
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\lisaa\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.instagram.com/");
+		System.out.println(driver.getTitle());
+		Thread.sleep(2000);
+		driver.manage().window().maximize();
+		driver.navigate().to("https://www.instagram.com/accounts/emailsignup/");
+		System.out.println(driver.getTitle());
+		Thread.sleep(2000);
+		driver.navigate().back();
+		String title=driver.getTitle();
+		if(title.equals("Instagram")){
+			System.out.println("Test Passed");
+		}else{
+			System.out.println("Test Failed");
+		}
+		System.out.println(driver.getCurrentUrl());
+		Thread.sleep(2000);
+		driver.navigate().to("https://www.instagram.com/accounts/password/reset/");
+		System.out.println(driver.getTitle());
+		driver.navigate().refresh();
+		System.out.println(driver.getPageSource());
+		Thread.sleep(2000);
+		driver.manage().window().minimize();
+		Thread.sleep(2000);
+		driver.close();
+	}
+}

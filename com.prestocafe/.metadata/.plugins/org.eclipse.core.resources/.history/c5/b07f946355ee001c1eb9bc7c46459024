@@ -1,0 +1,39 @@
+package firstset;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class SauceDemo {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\lisaa\\Downloads\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.saucedemo.com/");
+		driver.manage().window().maximize();
+		
+		WebElement username=driver.findElement(By.id("user-name"));
+		username.sendKeys("standard_user");
+		WebElement password=driver.findElement(By.name("password"));
+		password.sendKeys("secret_sauce");
+		WebElement loginbutton=driver.findElement(By.id("login-button"));
+		loginbutton.click();
+		WebElement addcart1=driver.findElement(By.id("add-to-cart-sauce-labs-bolt-t-shirt"));
+		addcart1.click();
+		WebElement addcart2=driver.findElement(By.id("shopping_cart_container"));
+		addcart2.click();
+		WebElement addcart3=driver.findElement(By.id("add-to-cart-test.allthethings()-t-shirt-(red)"));
+		addcart3.click();
+		WebElement checkout=driver.findElement(By.name("checkout"));
+		checkout.click();
+		driver.navigate().back();
+		WebElement remove=driver.findElement(By.name("remove-test.allthethings()-t-shirt-(red)"));
+		remove.click();
+		
+		
+		
+
+	}
+
+}

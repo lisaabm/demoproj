@@ -1,9 +1,10 @@
 package com.prestocafe.datahandler;
 
 import java.io.FileInputStream;
+import java.util.Iterator;
 
-import javax.swing.text.html.HTMLDocument.Iterator;
-
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -16,17 +17,27 @@ public class ExcelDataHandler {
 	XSSFWorkbook wb = new XSSFWorkbook(fs);
 	XSSFSheet sheet = (XSSFSheet) wb.getSheetAt(0);
 	
-	Iterator <Row> rowIterator = sheet.iterator();
-	
+	Iterator <Row> rowIterator = sheet.rowIterator();
 	while(rowIterator.hasNext()) {
-		Row rowValue = rowIterator.next();
-		
-		Iterator <Cell> column = rowValue.iterator();
-		while(column.hasNext()) {
-			Cell cellvalue = column.next();	
-			System.out.println(cellvalue);
+		Row row = rowIterator.next();
+		Iterator<Cell> cellIterator = row.cellIterator();
+		while (cellIterator.hasNext()) {
+			Cell cell = cellIterator.next();
+			// Read cell data
 		}
 	}
-
-
+	
+//	Iterator<Row>  rowIterator = sheet.rowIterator();
+//	
+//	while(rowIterator.hasNext()) {
+//		Row rowValue = rowIterator.next();
+//		
+//		Iterator <Cell> column = rowValue.iterator();
+//		while(column.hasNext()) {
+//			Cell cellvalue = column.next();	
+//			System.out.println(cellvalue);
+//		}
+//	}
+//}
 }
+

@@ -19,16 +19,19 @@ public class LoginTest {
 	SendKeysActionHelpers sendkeysactionhelpers;
 	ValidationActionHelpers validationactionhelpers;
 	WebActionHelpers webactionhelpers;
+	SoftAssert soft;
 	
 	@BeforeTest
 	public void initializeDriverandLaunchUrl() {
+		webactionhelpers = new WebActionHelpers();
 		webactionhelpers.initializeDriver("chrome");
 		webactionhelpers.launchURL(driver, "https://qalegend.com/restaurant/login");
 	}
 	
 	@Test(priority=0)
 	public void checkElementsDisplayed() throws Exception {
-		SoftAssert soft=new SoftAssert();
+		validationactionhelpers  = new ValidationActionHelpers();
+		soft=new SoftAssert();
 		soft.assertTrue(validationactionhelpers.isElementVisible(driver, loginpage.usrname));
 		soft.assertTrue(validationactionhelpers.isElementVisible(driver, loginpage.pwd));
 		soft.assertTrue(validationactionhelpers.isElementVisible(driver, loginpage.loginbtn));
@@ -37,6 +40,7 @@ public class LoginTest {
 	
 	@Test(priority=1)
 	public void validLogin() throws Exception {
+		loginpage = new LoginPage();
 		loginpage.typeUsername("admin");
 		loginpage.typePassword("password");
 		loginpage.clickLogin();

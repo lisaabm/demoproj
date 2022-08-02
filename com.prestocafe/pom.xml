@@ -50,6 +50,12 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.2.0</version>
 		</dependency>
+    <!-- https://mvnrepository.com/artifact/org.dmfs/iterators -->
+    <dependency>
+    <groupId>org.dmfs</groupId>
+    <artifactId>iterators</artifactId>
+    <version>1.2.1</version>
+    </dependency>
 
 
 </dependencies>

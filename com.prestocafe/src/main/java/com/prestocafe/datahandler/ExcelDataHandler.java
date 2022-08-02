@@ -1,6 +1,6 @@
 package com.prestocafe.datahandler;
 
-import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Iterator;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -12,11 +12,16 @@ public class ExcelDataHandler {
 	
 	public static final String currentDir  = System.getProperty("user.dir"); 
 	public static String filePath = currentDir + "/src/main/resources/";
+	static XSSFWorkbook workbook; 
+	static XSSFSheet sheet;
 	
-	FileInputStream fs = new FileInputStream("C:\\Users\\HP\\Desktop\\DEFI.xlsx");
-	XSSFWorkbook wb = new XSSFWorkbook(fs);
-	XSSFSheet sheet = (XSSFSheet) wb.getSheetAt(0);
+	public ExcelDataHandler(String fileName, String sheetName)throws IOException {
+		String excelPath = filePath+fileName;
+	    workbook = new XSSFWorkbook(excelPath);
+	    sheet = (XSSFSheet) workbook.getSheetAt(0);
+	}
 	
+	public void getCellData() {
 	Iterator <Row> rowIterator = sheet.rowIterator();
 	while(rowIterator.hasNext()) {
 		Row row = rowIterator.next();
@@ -25,6 +30,7 @@ public class ExcelDataHandler {
 			Cell cell = cellIterator.next();
 			// Read cell data
 		}
+	}
 	}
 	/**
 	 * method to get rowsCount
@@ -52,6 +58,18 @@ public class ExcelDataHandler {
 		return colCount;
 	}
 	
+	/**
+	 * method to get cell data (String)
+	 */
+	public String getCellDataString(int rowNum, int colNum) {
+		String cellValue = null;
+		try {
+			cellValue = sheet.getRow(rowNum).getCell(colNum).getStringCellValue();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return cellValue;
+	}
 	
 }
 

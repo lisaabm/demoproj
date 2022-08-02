@@ -26,8 +26,35 @@ public class ExcelDataHandler {
 			// Read cell data
 		}
 	}
+	/**
+	 * method to get rowsCount
+	 */
+	public static int getRowCount() {
+		int rowCount = 0;
+		try {
+			rowCount = sheet.getPhysicalNumberOfRows();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowCount;
+	}
+	
+	/**
+	 * method to get columnCount
+	 */
+	public static int getColCount() {
+		int colCount = 0;
+		try {
+			colCount = sheet.getRow(0).getLastCellNum();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return colCount;
+	}
+	
+	
 }
-}
+
 	
 
 

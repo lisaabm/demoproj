@@ -40,7 +40,7 @@ public class LoginTest {
 	
 	@Test(priority=1)
 	public void validLogin() throws Exception {
-		loginpage = new LoginPage();
+		loginpage = new LoginPage(driver);
 		loginpage.typeUsername("admin");
 		loginpage.typePassword("password");
 		loginpage.clickLogin();

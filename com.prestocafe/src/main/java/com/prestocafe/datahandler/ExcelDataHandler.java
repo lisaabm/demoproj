@@ -26,18 +26,8 @@ public class ExcelDataHandler {
 			// Read cell data
 		}
 	}
-	
-//	Iterator<Row>  rowIterator = sheet.rowIterator();
-//	
-//	while(rowIterator.hasNext()) {
-//		Row rowValue = rowIterator.next();
-//		
-//		Iterator <Cell> column = rowValue.iterator();
-//		while(column.hasNext()) {
-//			Cell cellvalue = column.next();	
-//			System.out.println(cellvalue);
-//		}
-//	}
-//}
 }
+}
+	
+
 

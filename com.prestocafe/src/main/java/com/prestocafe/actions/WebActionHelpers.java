@@ -46,6 +46,10 @@ public class WebActionHelpers {
 		
 	}
 	
+	public static WebDriver getDriver() {
+		return driver;
+	}
+	
 	/**
 	 * method to navigate to URL
 	 */

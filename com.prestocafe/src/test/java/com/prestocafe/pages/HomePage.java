@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.asserts.SoftAssert;
 
 import com.prestocafe.actions.ClickActionHelpers;
 import com.prestocafe.actions.SendKeysActionHelpers;
@@ -11,9 +12,10 @@ import com.prestocafe.actions.ValidationActionHelpers;
 
 public class HomePage {
 	WebDriver driver;
-	ClickActionHelpers clickactionhelpers;
-	SendKeysActionHelpers sendkeysactionhelpers;
-	ValidationActionHelpers validationactionhelpers;
+	ClickActionHelpers clickactionhelpers = new ClickActionHelpers();
+	SendKeysActionHelpers sendkeysactionhelpers = new SendKeysActionHelpers();
+	ValidationActionHelpers validationactionhelpers = new ValidationActionHelpers();
+	SoftAssert soft = new SoftAssert();
 
 	public HomePage(WebDriver driver) {
 		this.driver=driver;

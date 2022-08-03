@@ -13,9 +13,9 @@ import com.prestocafe.actions.ValidationActionHelpers;
 public class LoginPage {
     
 	WebDriver driver;
-	ClickActionHelpers clickactionhelpers;
-	SendKeysActionHelpers sendkeysactionhelpers;
-	ValidationActionHelpers validationactionhelpers;
+	ClickActionHelpers clickactionhelpers = new ClickActionHelpers();
+	SendKeysActionHelpers sendkeysactionhelpers = new SendKeysActionHelpers();
+	ValidationActionHelpers validationactionhelpers = new ValidationActionHelpers();
 	
 	public LoginPage(WebDriver  driver) {
 		this.driver=driver;
@@ -30,6 +30,9 @@ public class LoginPage {
 	
 	@FindBy(xpath="//input[@name='submit']")
 	public WebElement loginbtn;
+	
+	@FindBy(xpath="//title[text()='POS - point of sale Presto Cafeteria']")
+	public WebElement title;
 	
 	public void typeUsername(String username) {
 		sendkeysactionhelpers.enterValue(driver, usrname, username);

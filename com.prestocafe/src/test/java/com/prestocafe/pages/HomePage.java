@@ -6,9 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.asserts.SoftAssert;
 
-import com.prestocafe.actions.ClickActionHelpers;
-import com.prestocafe.actions.SendKeysActionHelpers;
-import com.prestocafe.actions.ValidationActionHelpers;
+import com.automation.actions.ClickActionHelpers;
+import com.automation.actions.SendKeysActionHelpers;
+import com.automation.actions.ValidationActionHelpers;
 
 public class HomePage {
 	WebDriver driver;

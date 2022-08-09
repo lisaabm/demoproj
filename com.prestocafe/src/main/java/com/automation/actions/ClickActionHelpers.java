@@ -1,4 +1,4 @@
-package com.prestocafe.actions;
+package com.automation.actions;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

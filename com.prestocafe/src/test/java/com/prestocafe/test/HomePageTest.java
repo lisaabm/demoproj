@@ -4,10 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.prestocafe.actions.ClickActionHelpers;
-import com.prestocafe.actions.SendKeysActionHelpers;
-import com.prestocafe.actions.ValidationActionHelpers;
-import com.prestocafe.actions.WebActionHelpers;
+import com.automation.actions.ClickActionHelpers;
+import com.automation.actions.SendKeysActionHelpers;
+import com.automation.actions.ValidationActionHelpers;
+import com.automation.actions.WebActionHelpers;
 import com.prestocafe.pages.HomePage;
 import com.prestocafe.pages.LoginPage;
 
@@ -29,6 +29,12 @@ public class HomePageTest {
 		homepage = loginpage.login("admin", "password");
 	}
 	
+//	<parameter name="browserType" value="chrome"></parameter>
+//	@Parameters("browserType")
+//	public void setup(String browserType) throws AutomationException {
+//		driver = launchBrowser(browserType);
+
+
 	
 
 }

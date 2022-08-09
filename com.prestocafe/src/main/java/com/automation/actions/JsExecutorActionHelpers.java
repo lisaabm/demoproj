@@ -1,4 +1,4 @@
-package com.prestocafe.actions;
+package com.automation.actions;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +22,12 @@ public class JsExecutorActionHelpers {
 		}
 	}
 	
-	
+	/**
+	 * 
+	 * @param driver
+	 * @param element
+	 * @throws Exception
+	 */
 	public void clickUsingJS(WebDriver driver, WebElement element) throws Exception {
 		try {
 			JavascriptExecutor js=(JavascriptExecutor) driver;

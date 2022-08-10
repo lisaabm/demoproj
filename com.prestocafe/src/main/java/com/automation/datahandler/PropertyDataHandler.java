@@ -11,11 +11,11 @@ public class PropertyDataHandler {
 
 	public Properties readPropertiesFile(String fileName) throws IOException {
 	      FileInputStream fis = null;
-	      Properties prop = null;
+	      Properties propertydatahandler = null;
 	      try {
 	         fis = new FileInputStream(filePath+fileName);
-	         prop = new Properties();
-	         prop.load(fis);
+	         propertydatahandler = new Properties();
+	         propertydatahandler.load(fis);
 	      } catch(FileNotFoundException fnfe) {
 	         fnfe.printStackTrace();
 	      } catch(IOException ioe) {
@@ -23,10 +23,10 @@ public class PropertyDataHandler {
 	      } finally {
 	         fis.close();
 	      }
-	      System.out.println("url: "+ prop.getProperty("url"));
-	      System.out.println("username: "+ prop.getProperty("username"));
-	      System.out.println("password: "+ prop.getProperty("password"));
-	      return prop;
+	      System.out.println("url: "+ propertydatahandler.getProperty("url"));
+	      System.out.println("username: "+ propertydatahandler.getProperty("username"));
+	      System.out.println("password: "+ propertydatahandler.getProperty("password"));
+	      return propertydatahandler;
 	   }
 }
 

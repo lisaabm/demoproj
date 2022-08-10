@@ -37,7 +37,7 @@ public class ListenersTest implements ITestListener {
 		try {
             Object currentClass = result.getInstance();
             WebDriver driver = WebActionHelpers.getDriver();
-            Capabilities cap = ((RemoteWebDriver) driver).getCapabilities();
+            Capabilities cap = ((RemoteWebDriver)driver).getCapabilities();
             extent.setSystemInfo("Browser", cap.getBrowserName());
             extent.setSystemInfo("BrowserVersion", cap.getBrowserVersion());
 

@@ -14,7 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class AutomationBase {
 	public static WebDriver driver;
 	WebActionHelpers webactionhelpers = new WebActionHelpers();
-	PropertyDataHandler prop = new PropertyDataHandler();
+	PropertyDataHandler propertydatahandler = new PropertyDataHandler();
     
 	/**
 	 * Method to Launch the Browser.
@@ -22,7 +22,7 @@ public class AutomationBase {
 	 * @return
 	 * @throws Exception
 	 */
-	public WebDriver launchBrowser(String browserName) throws Exception {
+	public WebDriver launchBrowser(String browserName, String filePath) throws Exception {
 		switch (browserName) {
 		case "chrome":
 			launchChromeBrowser();
@@ -49,7 +49,7 @@ public class AutomationBase {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
-			Properties allProp = prop.readPropertiesFile("restaurant.properties");
+			Properties allProp = propertydatahandler.readPropertiesFile("restaurant.properties");
 			webactionhelpers.launchURL(driver, allProp.getProperty("url"));
 			return driver;			
 		} catch (Exception e) {
@@ -67,7 +67,7 @@ public class AutomationBase {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
-			Properties allProp = prop.readPropertiesFile("restaurant.properties");
+			Properties allProp = propertydatahandler.readPropertiesFile("restaurant.properties");
 			webactionhelpers.launchURL(driver, allProp.getProperty("url"));
 			return driver;
 		}catch (Exception e) {

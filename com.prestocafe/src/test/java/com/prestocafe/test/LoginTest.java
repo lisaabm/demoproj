@@ -5,7 +5,6 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -30,14 +29,13 @@ public class LoginTest extends AutomationBase {
 	
 	@Parameters("browserType")
 	@BeforeTest
-	public void initializeDriverandLaunchUrl(@Optional("browserType") String browserType) throws Exception {
+	public void initializeDriverandLaunchUrl(String browserType) throws Exception {
 		
-		driver = launchBrowser("browserType");
-		Properties allProp = propertydatahandler.readPropertiesFile("restaurant.properties");
-		webactionhelpers.launchURL(driver, allProp.getProperty("url"));
-	
-		//webactionhelpers.launchURL(driver, "https://qalegend.com/restaurant/login");
-		loginpage = new LoginPage(driver);
+		final String currentDir = System.getProperty("user.dir");
+		final String filePath = currentDir + "/src/main/resources/" + "chromedriver.exe";
+		driver = launchBrowser(browserType,filePath);
+		
+    	 loginpage = new LoginPage(driver);
 	}
 	
 	@Test(priority=0)

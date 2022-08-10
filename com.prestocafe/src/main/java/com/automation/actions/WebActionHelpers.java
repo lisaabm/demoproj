@@ -20,8 +20,7 @@ public class WebActionHelpers {
 		try {
 			driver.get(url);
 			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-			driver.manage().window().maximize();
-		}catch(Exception e) {
+			}catch(Exception e) {
 			System.out.println("Launch Exception (WebActionHelper) : "+e.getMessage());
 		}
 		

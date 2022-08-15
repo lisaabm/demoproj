@@ -1,17 +1,13 @@
 package com.automation.datahandler;
 
 import java.io.IOException;
-import java.util.Iterator;
-
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelDataHandler {
 	
 	public static final String currentDir  = System.getProperty("user.dir"); 
-	public static String filePath = currentDir + "/src/main/resources/";
+	public static String filePath = currentDir + "/src/test/resources/";
 	static XSSFWorkbook workbook; 
 	static XSSFSheet sheet;
 	
@@ -21,17 +17,7 @@ public class ExcelDataHandler {
 	    sheet = (XSSFSheet) workbook.getSheetAt(0);
 	}
 	
-	public void getCellData() {
-	Iterator <Row> rowIterator = sheet.rowIterator();
-	while(rowIterator.hasNext()) {
-		Row row = rowIterator.next();
-		Iterator<Cell> cellIterator = row.cellIterator();
-		while (cellIterator.hasNext()) {
-			Cell cell = cellIterator.next();
-			// Read cell data
-		}
-	}
-	}
+	
 	/**
 	 * method to get rowsCount
 	 */

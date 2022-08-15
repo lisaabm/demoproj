@@ -14,8 +14,10 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.automation.actions.WebActionHelpers;
+import com.automation.base.AutomationBase;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -30,13 +32,13 @@ public class ListenersTest implements ITestListener {
     static ExtentTest test;
 
     String testName;
-    String reportPath = System.getProperty("user.dir") + "/Reports/";
+    String reportPath = System.getProperty("user.dir") + "/Report/";
 
 	@Override
 	public void onTestStart(ITestResult result) {
 		try {
             Object currentClass = result.getInstance();
-            WebDriver driver = WebActionHelpers.getDriver();
+            WebDriver driver = AutomationBase.getDriver();
             Capabilities cap = ((RemoteWebDriver)driver).getCapabilities();
             extent.setSystemInfo("Browser", cap.getBrowserName());
             extent.setSystemInfo("BrowserVersion", cap.getBrowserVersion());

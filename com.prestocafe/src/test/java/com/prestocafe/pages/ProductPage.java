@@ -14,7 +14,7 @@ public class ProductPage {
 	WebDriver driver;
 	ClickActionHelpers clickactionhelpers = new ClickActionHelpers();
 	SendKeysActionHelpers sendkeysactionhelpers = new SendKeysActionHelpers();
-	ValidationActionHelpers validationactionhelpers = new ValidationActionHelpers();
+
 	
 	public ProductPage(WebDriver  driver) {
 		this.driver=driver;
@@ -33,6 +33,53 @@ public class ProductPage {
 	@FindBy (xpath="//a[text()='PrintMenu']")
 	public WebElement printbtn;
 	
+	@FindBy(xpath="//select[@id='Type']")
+	public WebElement type;
 	
+	@FindBy(xpath="//input[@id='ProductCode']")
+	public WebElement code;
+	
+	@FindBy(xpath="//input[@id='ProductName']")
+	public WebElement name;
+	
+	@FindBy(xpath="//select[@id='Category']")
+	public WebElement category;
+	
+	@FindBy(xpath="//select[@name='supplier']")
+	public WebElement suplier;
+	
+	@FindBy(xpath="//input[@id='PurchasePrice']")
+	public WebElement purchaseprice;
+	
+	@FindBy(xpath="//input[@id='Tax']")
+	public WebElement tax;
+	
+	@FindBy(xpath="//select[@id='taxType']")
+	public WebElement taxmethod;
+	
+	@FindBy(xpath="//input[@id='Price']")
+	public WebElement price;
+	
+	@FindBy(xpath="//input[@id='Unit']")
+	public WebElement productunit;
+	
+	@FindBy(xpath="//textarea[@id='ProductOptions']")
+	public WebElement product;
+	
+	@FindBy(xpath="(//button[text()='Submit'])[1]")
+	public WebElement submitbtn;
+	
+	@FindBy(xpath="(//input[@type='search'])")
+	public WebElement search;
+	
+	@FindBy(xpath="")
+	public WebElement editbtn;
+	
+	@FindBy(xpath="//button[text()='Submit']")
+	public WebElement submit;
+	
+	public void uploadFile(WebElement Element, String filename ) {
+		
+	}
 
 }

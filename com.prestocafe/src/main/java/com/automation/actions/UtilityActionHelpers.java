@@ -62,7 +62,7 @@ public class UtilityActionHelpers {
      * @param driver
      * @throws Exception
      */
-	public void ErrorPageScreenshot(WebDriver driver) throws Exception {
+	public void takePageScreenshot(WebDriver driver) throws Exception {
 		try {
 			String random = RandomStringUtils.randomAlphanumeric(10);
 			String fileNm = "FailedSS "+ random;
@@ -88,5 +88,7 @@ public class UtilityActionHelpers {
 			throw new Exception("dragAndDrop (UtilityActionHelper) : "+e.getMessage());
 		}
 	}
+	
+
 
 }

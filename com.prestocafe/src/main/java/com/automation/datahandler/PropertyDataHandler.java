@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class PropertyDataHandler {
 	public static final String currentDir  = System.getProperty("user.dir"); 
-	public static String filePath = currentDir + "/src/main/resources/";
+	public static String filePath = currentDir + "/src/test/resources/";
 
 	public Properties readPropertiesFile(String fileName) throws IOException {
 	      FileInputStream fis = null;
@@ -23,9 +23,9 @@ public class PropertyDataHandler {
 	      } finally {
 	         fis.close();
 	      }
-	      System.out.println("url: "+ propertydatahandler.getProperty("url"));
-	      System.out.println("username: "+ propertydatahandler.getProperty("username"));
-	      System.out.println("password: "+ propertydatahandler.getProperty("password"));
+//	      System.out.println("url: "+ propertydatahandler.getProperty("url"));
+//	      System.out.println("username: "+ propertydatahandler.getProperty("username"));
+//	      System.out.println("password: "+ propertydatahandler.getProperty("password"));
 	      return propertydatahandler;
 	   }
 }

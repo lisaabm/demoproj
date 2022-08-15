@@ -35,5 +35,9 @@ public class SendKeysActionHelpers {
 			System.out.println("Excetion Occured" + e);
 		}
 	}
+	
+	public void uploadfile(WebDriver driver, WebElement element, String filename) {
+		
+	}
 
 }

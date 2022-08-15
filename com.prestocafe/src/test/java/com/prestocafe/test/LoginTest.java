@@ -32,14 +32,13 @@ public class LoginTest extends AutomationBase {
 	public void initializeDriverandLaunchUrl(String browserType) throws Exception {
 		
 		final String currentDir = System.getProperty("user.dir");
-		final String filePath = currentDir + "/src/main/resources/" + "chromedriver.exe";
+		final String filePath = currentDir + "/src/test/resources/" + "chromedriver.exe";
 		driver = launchBrowser(browserType,filePath);
-		
     	 loginpage = new LoginPage(driver);
 	}
 	
 	@Test(priority=0)
-	public void checkElementsDisplayed() throws Exception {
+	public void isElementsDisplayed() throws Exception {
 		
 		soft=new SoftAssert();
 		soft.assertTrue(validationactionhelpers.isElementVisible(driver, loginpage.usrname));
@@ -48,7 +47,16 @@ public class LoginTest extends AutomationBase {
 		soft.assertAll();
 	}
 	
-	@Test(priority=1)
+	/*@Test(priority=1 , enabled =false)
+	public void invalidLogin() throws Exception {
+		webactionhelpers = new WebActionHelpers();
+		loginpage.typeUsername("test");
+		loginpage.typePassword("test");
+		loginpage.clickLogin();
+		soft.assertEquals(webactionhelpers.ge, loginpage.title);
+	}*/
+	
+	@Test(priority=2)
 	public void validLogin() throws Exception {
 		webactionhelpers = new WebActionHelpers();
 		loginpage.typeUsername("admin");

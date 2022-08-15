@@ -7,22 +7,19 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.automation.actions.ClickActionHelpers;
 import com.automation.actions.SendKeysActionHelpers;
-import com.automation.actions.ValidationActionHelpers;
 
 public class LoginPage {
     
 	WebDriver driver;
 	ClickActionHelpers clickactionhelpers = new ClickActionHelpers();
 	SendKeysActionHelpers sendkeysactionhelpers = new SendKeysActionHelpers();
-	ValidationActionHelpers validationactionhelpers = new ValidationActionHelpers();
+	
 	
 	public LoginPage(WebDriver  driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="")
-	public WebElement pa;
 	@FindBy(xpath="//input[@name='username']")
 	public WebElement usrname;
 	

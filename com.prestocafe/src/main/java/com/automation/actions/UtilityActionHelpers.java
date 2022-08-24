@@ -57,6 +57,11 @@ public class UtilityActionHelpers {
 		}
 	}
 	
+	public String getRandomAlphaNumericString(int limit) {
+		String random = RandomStringUtils.randomAlphanumeric(limit);
+		return random;
+	}
+	
     /**
      * Method to take Page ScreenShot.
      * @param driver

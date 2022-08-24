@@ -1,8 +1,12 @@
 package com.prestocafe.pages;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 
 import com.automation.actions.ClickActionHelpers;
@@ -77,6 +81,16 @@ public class ProductPage {
 	
 	@FindBy(xpath="//button[text()='Submit']")
 	public WebElement submit;
+	
+	//@FindAll(xpath="//table[@id='Table']//td", value = { @FindBy })
+    //private List<WebElement> searchResults;
+	
+	
+	@FindBy(xpath="(//table[@id='Table']//td)[1]")
+	public WebElement productCode;
+	
+	@FindBy(xpath="(//table[@id='Table']//td)[2]")
+	public WebElement productName;
 	
 	public void uploadFile(WebElement Element, String filename ) {
 		

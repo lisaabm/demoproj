@@ -7,11 +7,11 @@
          <test thread-count="5" name="ChromeTest">
               <parameter name="browserType" value="chrome"></parameter>
            <classes>
-                   <class name="com.prestocafe.test.LoginTest"/> 
-                   <class name="com.prestocafe.test.HomePageTest"/>
+                 <!--  <class name="com.prestocafe.test.LoginTest"/> 
+                   <class name="com.prestocafe.test.HomePageTest"/> -->
                    <class name="com.prestocafe.test.ProductTest"/>
-                   <class name="com.prestocafe.test.StoresTest"/>
-                   <class name="com.prestocafe.test.PeopleTest"/>
+                <!--   <class name="com.prestocafe.test.StoresTest"/>
+                   <class name="com.prestocafe.test.PeopleTest"/> -->
            </classes>
               
   </test> <!-- Test -->
@@ -19,11 +19,11 @@
          <test thread-count="5" name="FirefoxTest">
               <parameter name="browserType" value="firefox"></parameter>
            <classes>
-                  <class name="com.prestocafe.test.LoginTest"/> 
+              <!--    <class name="com.prestocafe.test.LoginTest"/> 
                   <class name="com.prestocafe.test.HomePageTest"/>
                   <class name="com.prestocafe.test.ProductTest"/>
                   <class name="com.prestocafe.test.StoresTest"/>
-                  <class name="com.prestocafe.test.PeopleTest"/>
+                  <class name="com.prestocafe.test.PeopleTest"/> -->
            </classes>
   </test>
 </suite> <!-- Suite -->
